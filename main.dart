@@ -132,6 +132,7 @@ void calendar() {
         print("${calendarEntries[i]}");
       }
     case 'n' || 'N':
+      addCalendarEntries();
   }
 }
 
@@ -140,7 +141,7 @@ String userInputToString() {
   return userInputString;
 }
 
-calendarAddEntries() {
+addCalendarEntries() {
   print("\n");
   print("\tWas möchtest du beobachten?");
   print("\n");
