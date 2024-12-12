@@ -134,11 +134,6 @@ void calendar() {
   }
 }
 
-String userInputToString() {
-  userInputString = stdin.readLineSync() ?? "";
-  return userInputString;
-}
-
 viewCalendarEntries() {
   for (int i = 0; i < calendarEntries.length; i++) {
     print("${calendarEntries[i]}");
@@ -156,6 +151,11 @@ addCalendarEntries() {
   String userInput2 = stdin.readLineSync() ?? "";
   calendarEntries.add({'date': userInput2});
   print("\t$userInput beobachten am $userInput2 hinzugefügt.");
+}
+
+String userInputToString() {
+  userInputString = stdin.readLineSync() ?? "";
+  return userInputString;
 }
 
 void clearConsole() {
