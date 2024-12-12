@@ -3,6 +3,8 @@ import 'dart:io';
 List<Map<String, dynamic>> calendarEntries = [
   {'description': 'Mond gucken', 'date': '27.12.2024'}
 ];
+
+String userInputString = "";
 List<String> listOfUserNames = ["Can", "Julian", "Basti", "David"];
 List<int> listOfUserIDs = [1, 2, 3, 4];
 List<String> listOfUserPasswords = [
@@ -20,15 +22,7 @@ void main() {
   // while (runProgram = true) {}
 
   splashScreen();
-  clearConsole();
-  print("\tWähle bitte eine Option aus:");
-  print("\n");
-  print("\t(A)lmanach"); // print("\t");
-  print("\t(P)rofil");
-  print("\t(K)alender");
-  print("\n");
-
-  String userInput = stdin.readLineSync() ?? "";
+  mainMenu();
 
   switch (userInput) {
     case 'a' || 'A':
@@ -141,4 +135,22 @@ void splashScreen() {
   print("\n");
   sleep(Duration(seconds: 5));
   // start mainMenu
+}
+
+void mainMenu() {
+  String userDecision = "";
+  clearConsole();
+  print("\tWähle bitte eine Option aus:");
+  print("\n");
+  print("\t(A)lmanach");
+  print("\t(P)rofil");
+  print("\t(K)alender");
+  print("\n");
+  userDecision = userInputToString();
+  // add switch
+}
+
+String userInputToString() {
+  userInputString = stdin.readLineSync() ?? "";
+  return userInputString;
 }
