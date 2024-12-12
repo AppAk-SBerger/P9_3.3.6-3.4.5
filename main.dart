@@ -94,6 +94,8 @@ void almanach() {
       print("\t\t  ~null~");
       print("\t\t    :(");
       print("\n");
+    case 'z' || 'Z':
+      mainMenu();
     default:
       print("Bitte wähle 'M', 'a' oder 'V'.");
   }
@@ -127,6 +129,8 @@ void calendar() {
       viewCalendarEntries();
     case 'n' || 'N':
       addCalendarEntries();
+    case 'z' || 'Z':
+      mainMenu();
   }
 }
 
@@ -134,6 +138,8 @@ viewCalendarEntries() {
   for (int i = 0; i < calendarEntries.length; i++) {
     print("${calendarEntries[i]}");
   }
+  sleep(Duration(seconds: 5));
+  calendar();
 }
 
 addCalendarEntries() {
@@ -148,6 +154,8 @@ addCalendarEntries() {
   calendarEntries.add({'date': userInputDate});
   print(
       "\tBeobachtung von $userInputDescription am $userInputDate hinzugefügt.");
+  sleep(Duration(seconds: 3));
+  calendar();
 }
 
 String userInputToString() {
