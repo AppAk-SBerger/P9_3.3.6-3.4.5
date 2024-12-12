@@ -112,6 +112,7 @@ void profil() {
         "\t${listOfUserNames[i]}\t${listOfUserIDs[i]}\t${listOfUserAges[i]}\t${listOfUserIsActive[i]}");
   }
   print("\n");
+  sleep(Duration(seconds: 5));
 }
 
 void calendar() {
@@ -169,4 +170,13 @@ void clearConsole() {
   } else {
     print(Process.runSync('clear', [], runInShell: true).stdout);
   }
+}
+
+void wait(int forSeconds) {
+  for (int i = 0; i < forSeconds; i++) {
+    sleep(Duration(seconds: 1));
+    //print("${i + 1}.schleife\t\ti=$i\t\t${forSeconds - i}");
+  }
+  //print("Schleife durch.");
+  return;
 }
