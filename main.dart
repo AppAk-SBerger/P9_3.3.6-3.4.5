@@ -4,7 +4,7 @@ List<Map<String, dynamic>> calendarEntries = [
   /*{'description': 'Mond gucken', 'date': '27.12.2024'}*/
 ];
 
-String userInputString = "";
+String userInputString = ""; // for 'userInputToString()' funtion
 List<String> listOfUserNames = ["Can", "Julian", "Basti", "David"];
 List<int> listOfUserIDs = [1, 2, 3, 4];
 List<String> listOfUserPasswords = [
@@ -17,8 +17,8 @@ List<int> listOfUserAges = [20, 18, 40, 22];
 List<bool> listOfUserIsActive = [false, false, true, false];
 
 void main() {
-  splashScreen();
-  // mainMenu();
+  splashScreen(); // default start with splashScreen
+  // mainMenu(); // shortened start without splashScreen
 }
 
 void splashScreen() {
@@ -78,6 +78,8 @@ void almanach() {
           "ebenfalls als Monde bezeichnet werden, spricht man zur Vermeidung von Verwechslungen mitunter vom Erdmond.");
       print("\n");
       print("\n");
+      wait(10);
+      almanach();
     case 'a' || 'A':
       clearConsole();
       print("\n");
@@ -86,6 +88,8 @@ void almanach() {
       print("\t\t  ~null~");
       print("\t\t    :(");
       print("\n");
+      wait(3);
+      almanach();
     case 'v' || 'V':
       clearConsole();
       print("\n");
@@ -94,10 +98,14 @@ void almanach() {
       print("\t\t  ~null~");
       print("\t\t    :(");
       print("\n");
+      wait(3);
+      almanach();
     case 'z' || 'Z':
       mainMenu();
     default:
-      print("Bitte wähle 'M', 'a' oder 'V'.");
+      print("Bitte wähle 'M', 'a' oder 'V'. 'Z' für Zurück");
+      wait(3);
+      almanach();
   }
 }
 
@@ -113,6 +121,7 @@ void profil() {
   }
   print("\n");
   wait(5);
+  mainMenu();
 }
 
 void calendar() {
@@ -122,7 +131,8 @@ void calendar() {
   print("\n");
   print("\tWähle bitte eine Option aus.");
   print("\n");
-  print("\t(Ü)bersicht der Einträge\t(N)euen Eintrag erstellen");
+  print(
+      "\t(Ü)bersicht der Einträge\t(N)euen Eintrag erstellen\t(Z)urück zum Hauptmenu");
   print("\n");
   String userDecision = userInputToString();
   switch (userDecision) {
