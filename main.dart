@@ -128,9 +128,7 @@ void calendar() {
   String userDecision = stdin.readLineSync() ?? "";
   switch (userDecision) {
     case 'ü' || 'Ü':
-      for (int i = 0; i < calendarEntries.length; i++) {
-        print("${calendarEntries[i]}");
-      }
+      viewCalendarEntries();
     case 'n' || 'N':
       addCalendarEntries();
   }
@@ -139,6 +137,12 @@ void calendar() {
 String userInputToString() {
   userInputString = stdin.readLineSync() ?? "";
   return userInputString;
+}
+
+viewCalendarEntries() {
+  for (int i = 0; i < calendarEntries.length; i++) {
+    print("${calendarEntries[i]}");
+  }
 }
 
 addCalendarEntries() {
