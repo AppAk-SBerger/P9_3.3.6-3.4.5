@@ -1,7 +1,7 @@
 import 'dart:io';
 
 List<Map<String, dynamic>> calendarEntries = [
-  {'description': 'Mond gucken', 'date': '27.12.2024'}
+  /*{'description': 'Mond gucken', 'date': '27.12.2024'}*/
 ];
 
 String userInputString = "";
@@ -29,7 +29,7 @@ void splashScreen() {
   print("\t\t\t~~~ Astro-Almanach ~~~");
   print("\t\t\t~~~~~~~~~~~~~~~~~~~~~~");
   print("\n");
-  sleep(Duration(seconds: 5));
+  wait(5);
   mainMenu();
 }
 
@@ -61,7 +61,7 @@ void almanach() {
   print("\n");
   print("\tWähle bitte ein Objekt aus.");
   print("\n");
-  print("\t(M)ond\t\tM(a)rs\t\t(V)enus");
+  print("\t(M)ond\t\tM(a)rs\t\t(V)enus\t\t(Z)urück");
   print("\n");
   String userDecision = userInputToString();
   switch (userDecision) {
@@ -112,7 +112,7 @@ void profil() {
         "\t${listOfUserNames[i]}\t${listOfUserIDs[i]}\t${listOfUserAges[i]}\t${listOfUserIsActive[i]}");
   }
   print("\n");
-  sleep(Duration(seconds: 5));
+  wait(5);
 }
 
 void calendar() {
@@ -139,7 +139,7 @@ viewCalendarEntries() {
   for (int i = 0; i < calendarEntries.length; i++) {
     print("${calendarEntries[i]}");
   }
-  sleep(Duration(seconds: 5));
+  wait(5);
   calendar();
 }
 
@@ -155,7 +155,7 @@ addCalendarEntries() {
   calendarEntries.add({'date': userInputDate});
   print(
       "\tBeobachtung von $userInputDescription am $userInputDate hinzugefügt.");
-  sleep(Duration(seconds: 3));
+  wait(3);
   calendar();
 }
 
@@ -175,8 +175,8 @@ void clearConsole() {
 void wait(int forSeconds) {
   for (int i = 0; i < forSeconds; i++) {
     sleep(Duration(seconds: 1));
-    //print("${i + 1}.schleife\t\ti=$i\t\t${forSeconds - i}");
+    //print("${i + 1}.schleife\t\ti=$i\t\t${forSeconds - i}"); //diagnostics
   }
-  //print("Schleife durch.");
+  //print("Schleife durch."); //diagnostics
   return;
 }
