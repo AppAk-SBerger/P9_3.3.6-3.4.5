@@ -49,8 +49,10 @@ void mainMenu() {
       profil();
     case 'k' || "K":
       calendar();
+    case 'x' || 'X':
+      return;
     default:
-      print("Bitte wähle 'A', 'P' oder 'K'.");
+      print("Bitte wähle 'A', 'P' oder 'K'. 'X' für Beenden");
   }
 }
 
@@ -61,7 +63,7 @@ void almanach() {
   print("\n");
   print("\tWähle bitte ein Objekt aus.");
   print("\n");
-  print("\t(M)ond\t\tM(a)rs\t\t(V)enus\t\t(Z)urück");
+  print("\t(M)ond\t\tM(a)rs\t\t(V)enus\t\t(Z)urück zum Hauptmenu");
   print("\n");
   String userDecision = userInputToString();
   switch (userDecision) {
@@ -103,7 +105,7 @@ void almanach() {
     case 'z' || 'Z':
       mainMenu();
     default:
-      print("Bitte wähle 'M', 'a' oder 'V'. 'Z' für Zurück");
+      print("Bitte wähle 'M', 'a' oder 'V'. 'Z' für Zurück.");
       wait(3);
       almanach();
   }
@@ -142,6 +144,8 @@ void calendar() {
       addCalendarEntries();
     case 'z' || 'Z':
       mainMenu();
+    default:
+      print("Wähle bitte 'Ü' oder 'N'. 'Z' für Zurück.");
   }
 }
 
