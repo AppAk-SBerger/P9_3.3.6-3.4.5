@@ -17,11 +17,8 @@ List<int> listOfUserAges = [20, 18, 40, 22];
 List<bool> listOfUserIsActive = [false, false, true, false];
 
 void main() {
-  // bool runProgram = true;
-
-  // while (runProgram = true) {}
-
   splashScreen();
+  // mainMenu();
 }
 
 void splashScreen() {
@@ -67,7 +64,6 @@ void almanach() {
   print("\t(M)ond\t\tM(a)rs\t\t(V)enus");
   print("\n");
   String userDecision = userInputToString();
-
   switch (userDecision) {
     case 'm' || 'M':
       clearConsole();
@@ -125,7 +121,7 @@ void calendar() {
   print("\n");
   print("\t(Ü)bersicht der Einträge\t(N)euen Eintrag erstellen");
   print("\n");
-  String userDecision = stdin.readLineSync() ?? "";
+  String userDecision = userInputToString();
   switch (userDecision) {
     case 'ü' || 'Ü':
       viewCalendarEntries();
@@ -144,13 +140,14 @@ addCalendarEntries() {
   print("\n");
   print("\tWas möchtest du beobachten?");
   print("\n");
-  String userInput = stdin.readLineSync() ?? "";
-  calendarEntries.add({'description': userInput});
+  String userInputDescription = userInputToString();
+  calendarEntries.add({'description': userInputDescription});
   print("\n");
-  print("\tWann möchtest du $userInput beobachten? TT.MM.JJJJ");
-  String userInput2 = stdin.readLineSync() ?? "";
-  calendarEntries.add({'date': userInput2});
-  print("\t$userInput beobachten am $userInput2 hinzugefügt.");
+  print("\tWann möchtest du $userInputDescription beobachten? TT.MM.JJJJ");
+  String userInputDate = userInputToString();
+  calendarEntries.add({'date': userInputDate});
+  print(
+      "\tBeobachtung von $userInputDescription am $userInputDate hinzugefügt.");
 }
 
 String userInputToString() {
