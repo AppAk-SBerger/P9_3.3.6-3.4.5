@@ -19,14 +19,7 @@ void main() {
 
   // while (runProgram = true) {}
 
-  clearConsole();
-  print("\n");
-  print("\t\t\t~~~~~~~~~~~~~~~~~~~~~~");
-  print("\t\t\t~~~ Willkommen bei ~~~");
-  print("\t\t\t~~~ Astro-Almanach ~~~");
-  print("\t\t\t~~~~~~~~~~~~~~~~~~~~~~");
-  print("\n");
-  sleep(Duration(seconds: 5));
+  splashScreen();
   clearConsole();
   print("\tWähle bitte eine Option aus:");
   print("\n");
@@ -136,4 +129,16 @@ void clearConsole() {
   } else {
     print(Process.runSync('clear', [], runInShell: true).stdout);
   }
+}
+
+void splashScreen() {
+  clearConsole();
+  print("\n");
+  print("\t\t\t~~~~~~~~~~~~~~~~~~~~~~");
+  print("\t\t\t~~~ Willkommen bei ~~~");
+  print("\t\t\t~~~ Astro-Almanach ~~~");
+  print("\t\t\t~~~~~~~~~~~~~~~~~~~~~~");
+  print("\n");
+  sleep(Duration(seconds: 5));
+  // start mainMenu
 }
