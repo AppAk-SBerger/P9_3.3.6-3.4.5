@@ -132,22 +132,25 @@ void calendar() {
         print("${calendarEntries[i]}");
       }
     case 'n' || 'N':
-      print("\n");
-      print("\tWas möchtest du beobachten?");
-      print("\n");
-      String userInput = stdin.readLineSync() ?? "";
-      calendarEntries.add({'description': userInput});
-      print("\n");
-      print("\tWann möchtest du $userInput beobachten? TT.MM.JJJJ");
-      String userInput2 = stdin.readLineSync() ?? "";
-      calendarEntries.add({'date': userInput2});
-      print("\t$userInput beobachten am $userInput2 hinzugefügt.");
   }
 }
 
 String userInputToString() {
   userInputString = stdin.readLineSync() ?? "";
   return userInputString;
+}
+
+calendarAddEntries() {
+  print("\n");
+  print("\tWas möchtest du beobachten?");
+  print("\n");
+  String userInput = stdin.readLineSync() ?? "";
+  calendarEntries.add({'description': userInput});
+  print("\n");
+  print("\tWann möchtest du $userInput beobachten? TT.MM.JJJJ");
+  String userInput2 = stdin.readLineSync() ?? "";
+  calendarEntries.add({'date': userInput2});
+  print("\t$userInput beobachten am $userInput2 hinzugefügt.");
 }
 
 void clearConsole() {
